@@ -1,0 +1,42 @@
+{
+  "name": "skill-guide",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "stylelint": "stylelint \"src/**/*.css\"",
+    "stylelint:fix": "stylelint \"src/**/*.css\" --fix"
+  },
+  "dependencies": {
+    "@base-ui-components/react": "^1.0.0-rc.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "next": "^16.4.5",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.4.5",
+    "prettier": "^3.9.10",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "stylelint": "^18.0.0",
+    "stylelint-config-standard": "^41.0.0",
+    "stylelint-config-tailwindcss": "^1.0.1",
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.4.0",
+    "typescript": "^5"
+  }
+}

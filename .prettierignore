@@ -1,0 +1,46 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.*
+
+# Build output
+.next
+out
+build
+.vercel
+
+# Lockfiles (format only source)
+package-lock.json
+bun.lock
+
+# Generated
+next-env.d.ts
+*.tsbuildinfo
+
+# Logs
+*.log
+dev.log
+
+# Screenshots (binary)
+*.png
+*.jpg
+*.jpeg
+
+# Data files (long, don't reformat)
+src/lib/data/repos.ts
+
+# shadcn/ui components (vendor, not our code)
+src/components/ui
+
+# Hooks (vendor)
+src/hooks
+
+# Uploads (reference files, not ours)
+upload
+
+# Examples / skills / mini-services (not our code)
+examples
+skills
+mini-services
+tests
+download

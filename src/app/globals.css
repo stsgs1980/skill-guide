@@ -1,0 +1,441 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), var(--font-inter-tight), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-display: var(--font-inter-tight), var(--font-inter), sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* === LINEAR PALETTE === */
+  --color-l-bg: var(--l-bg);
+  --color-l-bg-1: var(--l-bg-1);
+  --color-l-bg-2: var(--l-bg-2);
+  --color-l-bg-3: var(--l-bg-3);
+  --color-l-border: var(--l-border);
+  --color-l-border-2: var(--l-border-2);
+  --color-l-border-3: var(--l-border-3);
+  --color-l-text: var(--l-text);
+  --color-l-text-2: var(--l-text-2);
+  --color-l-text-3: var(--l-text-3);
+  --color-l-text-4: var(--l-text-4);
+  --color-l-purple: var(--l-purple);
+  --color-l-purple-2: var(--l-purple-2);
+  --color-l-green: var(--l-green);
+  --color-l-yellow: var(--l-yellow);
+  --color-l-orange: var(--l-orange);
+  --color-l-red: var(--l-red);
+  --color-l-blue: var(--l-blue);
+}
+
+:root {
+  /* Linear dark-first palette — exact values from linear.app */
+  --radius: 0.5rem;
+
+  --l-bg: #08090a;
+  /* Font variables — defined by Next.js font loader in layout.tsx, fallbacks here for IDE */
+  --font-inter: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-inter-tight: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-jetbrains-mono: ui-monospace, 'SF Mono', Menlo, monospace; /* page background — darkest */
+  --l-bg-1: #101113; /* surface 1 — cards */
+  --l-bg-2: #18191b; /* surface 2 — hover */
+  --l-bg-3: #1f2023; /* surface 3 — active */
+  --l-border: rgba(255, 255, 255, 0.06); /* subtle border */
+  --l-border-2: rgba(255, 255, 255, 0.09); /* default border */
+  --l-border-3: rgba(255, 255, 255, 0.14); /* strong border */
+  --l-text: #f7f8f8; /* primary text */
+  --l-text-2: #c8ced9; /* secondary text — was #b4bcd0, raised for contrast */
+  --l-text-3: #9aa1ac; /* tertiary text — was #8a8f98, raised for contrast */
+  --l-text-4: #8b909a; /* quaternary — raised to 7.1:1 for WCAG AAA */
+  --l-purple: #5e6ad2; /* Linear brand purple */
+  --l-purple-2: #7a82f0; /* hover purple */
+  --l-green: #26d07c; /* success / trusted */
+  --l-yellow: #f2c94c; /* warning / verify */
+  --l-orange: #ff8c42; /* borderline / dangerous */
+  --l-red: #eb5757; /* danger / suspicious */
+  --l-blue: #4b9eff; /* info accent */
+
+  --background: var(--l-bg);
+  --foreground: var(--l-text);
+  --card: var(--l-bg-1);
+  --card-foreground: var(--l-text);
+  --popover: var(--l-bg-2);
+  --popover-foreground: var(--l-text);
+  --primary: var(--l-purple);
+  --primary-foreground: #ffffff;
+  --secondary: var(--l-bg-2);
+  --secondary-foreground: var(--l-text);
+  --muted: var(--l-bg-2);
+  --muted-foreground: var(--l-text-3);
+  --accent: var(--l-purple);
+  --accent-foreground: #ffffff;
+  --destructive: var(--l-red);
+  --border: var(--l-border-2);
+  --input: var(--l-bg-2);
+  --ring: var(--l-purple);
+  --chart-1: var(--l-purple);
+  --chart-2: var(--l-green);
+  --chart-3: var(--l-yellow);
+  --chart-4: var(--l-blue);
+  --chart-5: var(--l-red);
+  --sidebar: var(--l-bg-1);
+  --sidebar-foreground: var(--l-text);
+  --sidebar-primary: var(--l-purple);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--l-bg-2);
+  --sidebar-accent-foreground: var(--l-text);
+  --sidebar-border: var(--l-border-2);
+  --sidebar-ring: var(--l-purple);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    overflow-x: clip;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'ss01', 'ss02', 'cv11', 'cv02';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  /* Display font utility — Inter Tight for headings */
+  .font-display {
+    letter-spacing: -0.022em;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  /* === TYPOGRAPHIC SCALE === */
+  /* Font-family inherited from: body=font-sans(Inter), Tailwind font-display=Inter Tight, font-mono=JetBrains */
+  .type-display {
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  .type-heading {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.024em;
+    font-weight: 600;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  .type-subheading {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    letter-spacing: -0.014em;
+    font-weight: 500;
+  }
+  .type-body {
+    font-size: 1rem;
+    line-height: 1.65;
+    letter-spacing: -0.006em;
+  }
+  .type-body-lg {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+  .type-meta {
+    font-size: 0.6875rem;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-feature-settings: 'zero', 'ss01';
+  }
+  .type-mono {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    font-feature-settings: 'zero', 'ss01';
+  }
+
+  /* === DIVIDERS === */
+  /* Double-line divider between major sections */
+  .divide-double {
+    border-top: 3px double var(--l-border-3);
+  }
+
+  /* Air utilities — generous spacing for long-form content */
+  .air-y > * + * {
+    margin-top: 1.5rem;
+  }
+  .air-y-lg > * + * {
+    margin-top: 2.5rem;
+  }
+
+  /* === BENTO GRID — dense flow, equal-height cells === */
+  /* Dense flow fills holes left by col-span items */
+  .bento-grid {
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+  }
+  /* Stretch all children to fill row height — eliminates uneven cards */
+  .bento-grid > * {
+    min-height: 100%;
+  }
+
+  /* Linear hero glow — purple radial */
+  .linear-glow {
+    position: relative;
+  }
+  .linear-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(94, 106, 210, 0.25), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 10%, rgba(94, 106, 210, 0.12), transparent 50%);
+  }
+  .linear-glow > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Linear grid background — subtle dotted */
+  .linear-grid {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+
+  /* Linear-style scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  /* Selection — purple */
+  ::selection {
+    background: rgba(94, 106, 210, 0.4);
+    color: #ffffff;
+  }
+
+  /* Linear-style focus ring */
+  :focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--l-bg),
+      0 0 0 4px rgba(94, 106, 210, 0.5);
+    border-radius: 6px;
+  }
+}
+
+/* Linear-style Base UI overrides */
+[data-base-ui-accordion] [data-base-ui-accordion-trigger] {
+  cursor: pointer;
+}
+[data-base-ui-accordion] [data-base-ui-accordion-panel] {
+  overflow: hidden;
+}
+
+/* Linear tab indicator — subtle purple underline */
+[data-base-ui-tabs-tab][data-selected] {
+  position: relative;
+}
+
+/* === DESIGN KIT COMPONENTS === */
+
+/* BorderBeam — animated conic gradient border (design-kit #6)
+   Simplified: conic-gradient as background with transparent inner via padding+inset */
+@property --beam-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.border-beam {
+  position: relative;
+  border: 2px solid transparent !important;
+  background:
+    linear-gradient(var(--l-bg-1), var(--l-bg-1)) padding-box,
+    conic-gradient(
+        from var(--beam-angle),
+        var(--l-purple-2) 0deg,
+        var(--l-blue) 90deg,
+        transparent 180deg,
+        transparent 270deg,
+        var(--l-purple-2) 360deg
+      )
+      border-box;
+  animation: beamspin 6s linear infinite;
+}
+@keyframes beamspin {
+  to {
+    --beam-angle: 360deg;
+  }
+}
+
+/* ProgressiveBlur (design-kit #11) — bottom of long sections fades into blur,
+   signaling "content continues". 3 layers with increasing blur + mask by Y. */
+.progressive-blur {
+  position: relative;
+}
+.progressive-blur::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  pointer-events: none;
+  z-index: 5;
+  background: linear-gradient(to bottom, transparent 0%, var(--l-bg-1) 80%, var(--l-bg-1) 100%);
+}
+.progressive-blur::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  pointer-events: none;
+  z-index: 4;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .border-beam,
+  .text-highlight::after,
+  .glare-hover::after {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* TextHighlighter (design-kit #17) — marker sweep on a key word */
+.text-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+}
+.text-highlight::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: 0.08em;
+  height: 0.45em;
+  background: color-mix(in oklab, var(--l-purple-2) 50%, transparent);
+  border-radius: 2px;
+  transform-origin: left;
+  animation: highlightin 4s ease-in-out infinite;
+  z-index: -1;
+}
+@keyframes highlightin {
+  0%,
+  10% {
+    transform: scaleX(0);
+  }
+  25%,
+  70% {
+    transform: scaleX(1);
+  }
+  85%,
+  100% {
+    transform: scaleX(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .text-highlight::after {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
+/* Active repo card — highlighted when targeted via sidebar click.
+   Uses :target pseudo-class, no JS needed.
+   Applies purple solid border + glow to the card whose id matches the URL hash. */
+.repo-card-wrapper:target .repo-card {
+  border: 1px solid var(--l-purple) !important;
+  box-shadow:
+    0 0 0 1px var(--l-purple),
+    0 0 24px rgba(94, 106, 210, 0.25);
+}
+/* Also highlight when marked active via data-active attribute (scroll-spy) */
+.repo-card[data-active='true'] {
+  border: 1px solid var(--l-purple) !important;
+  box-shadow:
+    0 0 0 1px var(--l-purple),
+    0 0 24px rgba(94, 106, 210, 0.25);
+}
+
+/* GlareHover — light sweep on hover (design-kit #8) */
+.glare-hover {
+  position: relative;
+  overflow: hidden;
+}
+.glare-hover::after {
+  content: '';
+  position: absolute;
+  inset: -40% -60%;
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.06) 47%, rgba(94, 106, 210, 0.18) 52%, transparent 62%);
+  transform: translateX(-70%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+.glare-hover:hover::after {
+  transform: translateX(70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .border-beam::before,
+  .glare-hover::after {
+    animation: none;
+    transition: none;
+  }
+}

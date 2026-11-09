@@ -1,0 +1,70 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = 140
+
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# Data files: long Russian string literals — Prettier cannot split
+[src/lib/data/**]
+max_line_length = off
+
+# SVG icon paths — single d="" attribute, cannot split
+[src/components/guide/icons.tsx]
+max_line_length = off
+
+# meta-steps: long Russian string literals
+[src/components/guide/meta-steps.ts]
+max_line_length = off
+
+# CSS data URIs — single url() value, cannot split
+[*.css]
+max_line_length = off
+
+# Russian text in JSX props/paragraphs — Prettier cannot split string literals
+[src/components/guide/Hero.tsx]
+max_line_length = off
+
+[src/components/guide/ObraDeepDive.tsx]
+max_line_length = off
+
+[src/components/guide/WondelaiDeepDive.tsx]
+max_line_length = off
+
+[src/components/guide/MetaSection.tsx]
+max_line_length = off
+
+[src/components/guide/TierRanking.tsx]
+max_line_length = off
+
+[src/components/guide/DecisionTree.tsx]
+max_line_length = off
+
+[src/components/guide/Bundles.tsx]
+max_line_length = off
+
+[src/components/guide/ConceptExplainer.tsx]
+max_line_length = off
+
+[src/components/guide/Footer.tsx]
+max_line_length = off
+
+[src/components/guide/QualityChecklist.tsx]
+max_line_length = off
+
+[src/app/layout.tsx]
+max_line_length = off
+
+[src/components/guide/RepoCard.tsx]
+max_line_length = off
+
+[src/components/guide/RepoSidebar.tsx]
+max_line_length = off
