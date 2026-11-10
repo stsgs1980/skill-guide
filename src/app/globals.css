@@ -1,6 +1,66 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+:root {
+  /* Linear dark-first palette — exact values from linear.app */
+  --radius: 0.5rem;
+
+  --l-bg: #08090a;
+  /* Font variables — defined by Next.js font loader in layout.tsx, fallbacks here for IDE */
+  --font-inter: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-inter-tight: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-jetbrains-mono: ui-monospace, 'SF Mono', Menlo, monospace; /* page background — darkest */
+  --l-bg-1: #101113; /* surface 1 — cards */
+  --l-bg-2: #18191b; /* surface 2 — hover */
+  --l-bg-3: #1f2023; /* surface 3 — active */
+  --l-border: rgba(255, 255, 255, 0.06); /* subtle border */
+  --l-border-2: rgba(255, 255, 255, 0.09); /* default border */
+  --l-border-3: rgba(255, 255, 255, 0.14); /* strong border */
+  --l-text: #f7f8f8; /* primary text */
+  --l-text-2: #c8ced9; /* secondary text — was #b4bcd0, raised for contrast */
+  --l-text-3: #9aa1ac; /* tertiary text — was #8a8f98, raised for contrast */
+  --l-text-4: #8b909a; /* quaternary — raised to 7.1:1 for WCAG AAA */
+  --l-purple: #5e6ad2; /* Linear brand purple */
+  --l-purple-2: #7a82f0; /* hover purple */
+  --l-green: #26d07c; /* success / trusted */
+  --l-yellow: #f2c94c; /* warning / verify */
+  --l-orange: #ff8c42; /* borderline / dangerous */
+  --l-red: #eb5757; /* danger / suspicious */
+  --l-blue: #4b9eff; /* info accent */
+
+  --background: var(--l-bg);
+  --foreground: var(--l-text);
+  --card: var(--l-bg-1);
+  --card-foreground: var(--l-text);
+  --popover: var(--l-bg-2);
+  --popover-foreground: var(--l-text);
+  --primary: var(--l-purple);
+  --primary-foreground: #ffffff;
+  --secondary: var(--l-bg-2);
+  --secondary-foreground: var(--l-text);
+  --muted: var(--l-bg-2);
+  --muted-foreground: var(--l-text-3);
+  --accent: var(--l-purple);
+  --accent-foreground: #ffffff;
+  --destructive: var(--l-red);
+  --border: var(--l-border-2);
+  --input: var(--l-bg-2);
+  --ring: var(--l-purple);
+  --chart-1: var(--l-purple);
+  --chart-2: var(--l-green);
+  --chart-3: var(--l-yellow);
+  --chart-4: var(--l-blue);
+  --chart-5: var(--l-red);
+  --sidebar: var(--l-bg-1);
+  --sidebar-foreground: var(--l-text);
+  --sidebar-primary: var(--l-purple);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--l-bg-2);
+  --sidebar-accent-foreground: var(--l-text);
+  --sidebar-border: var(--l-border-2);
+  --sidebar-ring: var(--l-purple);
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -62,66 +122,6 @@
   --color-l-orange: var(--l-orange);
   --color-l-red: var(--l-red);
   --color-l-blue: var(--l-blue);
-}
-
-:root {
-  /* Linear dark-first palette — exact values from linear.app */
-  --radius: 0.5rem;
-
-  --l-bg: #08090a;
-  /* Font variables — defined by Next.js font loader in layout.tsx, fallbacks here for IDE */
-  --font-inter: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-inter-tight: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-jetbrains-mono: ui-monospace, 'SF Mono', Menlo, monospace; /* page background — darkest */
-  --l-bg-1: #101113; /* surface 1 — cards */
-  --l-bg-2: #18191b; /* surface 2 — hover */
-  --l-bg-3: #1f2023; /* surface 3 — active */
-  --l-border: rgba(255, 255, 255, 0.06); /* subtle border */
-  --l-border-2: rgba(255, 255, 255, 0.09); /* default border */
-  --l-border-3: rgba(255, 255, 255, 0.14); /* strong border */
-  --l-text: #f7f8f8; /* primary text */
-  --l-text-2: #c8ced9; /* secondary text — was #b4bcd0, raised for contrast */
-  --l-text-3: #9aa1ac; /* tertiary text — was #8a8f98, raised for contrast */
-  --l-text-4: #8b909a; /* quaternary — raised to 7.1:1 for WCAG AAA */
-  --l-purple: #5e6ad2; /* Linear brand purple */
-  --l-purple-2: #7a82f0; /* hover purple */
-  --l-green: #26d07c; /* success / trusted */
-  --l-yellow: #f2c94c; /* warning / verify */
-  --l-orange: #ff8c42; /* borderline / dangerous */
-  --l-red: #eb5757; /* danger / suspicious */
-  --l-blue: #4b9eff; /* info accent */
-
-  --background: var(--l-bg);
-  --foreground: var(--l-text);
-  --card: var(--l-bg-1);
-  --card-foreground: var(--l-text);
-  --popover: var(--l-bg-2);
-  --popover-foreground: var(--l-text);
-  --primary: var(--l-purple);
-  --primary-foreground: #ffffff;
-  --secondary: var(--l-bg-2);
-  --secondary-foreground: var(--l-text);
-  --muted: var(--l-bg-2);
-  --muted-foreground: var(--l-text-3);
-  --accent: var(--l-purple);
-  --accent-foreground: #ffffff;
-  --destructive: var(--l-red);
-  --border: var(--l-border-2);
-  --input: var(--l-bg-2);
-  --ring: var(--l-purple);
-  --chart-1: var(--l-purple);
-  --chart-2: var(--l-green);
-  --chart-3: var(--l-yellow);
-  --chart-4: var(--l-blue);
-  --chart-5: var(--l-red);
-  --sidebar: var(--l-bg-1);
-  --sidebar-foreground: var(--l-text);
-  --sidebar-primary: var(--l-purple);
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: var(--l-bg-2);
-  --sidebar-accent-foreground: var(--l-text);
-  --sidebar-border: var(--l-border-2);
-  --sidebar-ring: var(--l-purple);
 }
 
 @layer base {
