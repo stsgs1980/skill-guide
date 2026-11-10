@@ -57,8 +57,9 @@ server.log
 /mini-services/
 /.zscripts/
 
-# OpenCode local session/goal state (not part of the project)
+# OpenCode/agent local session state (not part of the project)
 /.opencode/
+/.awb/
 
 # IDE
 .idea/*
